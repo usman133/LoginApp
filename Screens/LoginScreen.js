@@ -1,9 +1,11 @@
 import { CurrentRenderContext } from '@react-navigation/native'
-import React from 'react'
+import React, {useState} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native'
 
 const LoginScreen = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 {
   return (
     <KeyboardAvoidingView
@@ -13,14 +15,14 @@ const LoginScreen = () => {
       <View style={styles.inputContainer}>
         <TextInput
         placeholder="Email"
-        // value={ }
-        // onChangeText={text => }
+        value={email}
+        onChangeText={text => setEmail(text)}
         style={styles.input}
         />
          <TextInput
         placeholder="Password"
-        // value={ }
-        // onChangeText={text => }
+        value={password}
+        onChangeText={text => setPassword(text)}
         style={styles.input}
         secureTextEntry
         /> 
@@ -32,7 +34,7 @@ const LoginScreen = () => {
         onPress={() => { }}
         style={styles.button}
         >
-          <Text style={styles.button}>Sign in</Text>
+          <Text style={styles.buttonText}>Sign in</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -92,7 +94,7 @@ buttonText: {
   fontSize: 16,
 },
 buttonOutlineText: {
-  color: '#2da44e',
+  color: 'black',
   fontWeight: '700',
   fontSize: 16,
 },
